@@ -11,10 +11,13 @@ yt = YouTube(link)
 print("Title: ", yt.title)
 print("View: ", yt.views)
 
-yd = yt.streams.filter(adaptive=True).filter(mime_type='video/webm').first()
-yd.download('d:\youtube download')
+video = yt.streams.filter(adaptive=True, mime_type='video/webm').first()
+video.download(r'd:\youtube download')
 
 
-# try to add a way to change video format into mp3 for music downloading
+# download video instead but for audio only
+audio = yt.streams.filter(only_audio=True, mime_type = 'audio/mp4').first()
+audio.download(r'd:\youtube download')
+
 # error handling
 # after all of that is done, make everything work with tkinter gui
