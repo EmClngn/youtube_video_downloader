@@ -1,5 +1,6 @@
 # The vision is to create a youtube video downloader that is able to download videos and audio only
 from pytube import YouTube
+import subprocess
 
 # pseudo code 
 
@@ -11,13 +12,11 @@ yt = YouTube(link)
 print("Title: ", yt.title)
 print("View: ", yt.views)
 
-video = yt.streams.filter(adaptive=True, mime_type='video/webm').first()
-video.download(r'd:\youtube download')
-
+# idea is to combine the video with the downloaded audio but can't get ffmpeg to work
+video = yt.streams.get_highest_resolution()
 
 # download video instead but for audio only
 audio = yt.streams.filter(only_audio=True, mime_type = 'audio/mp4').first()
 audio.download(r'd:\youtube download')
 
-# error handling
 # after all of that is done, make everything work with tkinter gui
