@@ -8,6 +8,21 @@ from pytube import YouTube
 # adjust some things with the code in the yt video once have more knowledge about pytube
 # idea is to combine the video with the downloaded audio but can't get ffmpeg to work
 
+# for whether they want a video or audio
+def video_or_audio():
+    while True:
+        options = input("Press '0' if you want Video or press '1' if you want Audio: ")
+        option_1 = "0"
+        option_2 = "1"
+        if options == option_1:
+            video_downlaoder()
+            break
+        elif options == option_2:
+            audio_downlaoder()
+            break
+        else:
+            print("Please only input the numbers '0' or '1'.")
+          
 # downloading the whole video
 def video_downlaoder():
     while True:
@@ -43,13 +58,4 @@ def audio_downlaoder():
             print("Please input a valid YouTube URL or valid download path. Please try again.")
 
 
-
-options = input("Press '0' if you want Video or press '1' if you want Audio: ")
-option_1 = "0"
-option_2 = "1"
-if options == option_1:
-    video_downlaoder()
-elif options == option_2:
-    audio_downlaoder()
-
-
+video_or_audio()
