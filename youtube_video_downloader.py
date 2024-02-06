@@ -20,9 +20,9 @@ def audio_downlaoder():
 
 user_link = input("Paste here your desired Youtube link: ")
 download_path = input("Paste here your desired download path: ")
-options = input("Video or Audio?: ")
-option_1 = "Video"
-option_2 = "Audio"
+options = input("Press '0' if you want Video or press '1' if you want Audio: ")
+option_1 = "0"
+option_2 = "1"
 
 yt = YouTube(user_link)
 print("Title: ", yt.title)
@@ -32,4 +32,4 @@ if options == option_1:
 elif options == option_2:
     audio_downlaoder()
 
-# after all of that is done, make everything work with tkinter gui
+
