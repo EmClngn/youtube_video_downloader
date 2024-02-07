@@ -1,4 +1,6 @@
 # The vision is to create a youtube video downloader that is able to download videos and audio only
+
+# if you don't have pytube already installed just input pip install pytube in your terminal
 from pytube import YouTube
 
 # pseudo code 
@@ -15,16 +17,16 @@ def video_or_audio():
         option_1 = "0"
         option_2 = "1"
         if options == option_1:
-            video_downlaoder()
+            video_downloader()
             break
         elif options == option_2:
-            audio_downlaoder()
+            audio_downloader()
             break
         else:
             print("Please only input the numbers '0' or '1'.")
           
 # downloading the whole video
-def video_downlaoder():
+def video_downloader():
     while True:
         try:
             user_link = input("Paste here your desired Youtube link: ")
@@ -41,7 +43,7 @@ def video_downlaoder():
             print("Please input a valid YouTube URL or valid download path. Please try again.")
 
 # download video instead but for audio only
-def audio_downlaoder():
+def audio_downloader():
     while True:
         try:
             user_link = input("Paste here your desired Youtube link: ")
